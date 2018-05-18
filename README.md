@@ -11,3 +11,12 @@ All dependend projects + dll project + loader project are inside "Imports" folde
 !Important Note!
 - class with ftp credentials are removed from r3p.bdo.testconsole + r3p.bdo.guiloader
 -> to make this work use ur own ftp with ur own credentials or just disable these features
+
+!Required NuGet Packages!
+- FluentFTP
+- Microsoft.WindowsAPICodePack.Core
+- Microsoft.WindowsAPICodePack.Shell
+- SharpDX
+- SharpDX.Direct2D1
+- SharpDX.DXGI
+- SharpDX.Mathematics
