@@ -7,3 +7,7 @@ This project was created long long ago so please don't judge me cause of design 
 The Bot/Hack is a combination of external C# and an internal C++ dll, they communicate through a named pipe.
 
 All dependend projects + dll project + load project are inside "Imports" folder.
+
+!Important Note!
+- class with ftp credentials are removed from r3p.bdo.testconsole + r3p.bdo.guiloader
+-> to make this work use ur own ftp with ur own credentials or just disable these features
