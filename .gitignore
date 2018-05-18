@@ -23,7 +23,6 @@ bld/
 [Ll]og/
 
 FtpCredendtials.cs
-
 *.ffs_db
 *.bin
 *.dll
