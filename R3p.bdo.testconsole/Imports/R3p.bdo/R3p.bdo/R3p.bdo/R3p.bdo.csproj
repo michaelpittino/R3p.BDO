@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{630E178B-1316-4DEB-BDC7-C72F2F6507D3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>R3p.bdo</RootNamespace>
+    <AssemblyName>R3p.bdo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Automation\Hacks\Navigation.cs" />
+    <Compile Include="Automation\Hacks\SpeedHack.cs" />
+    <Compile Include="Automation\Hacks\UI.cs" />
+    <Compile Include="Automation\ItemMarket\AutoItemBuy.cs" />
+    <Compile Include="Automation\ItemMarket\AutoItemRegister.cs" />
+    <Compile Include="Automation\LifeSkills\AutoProcessing.cs" />
+    <Compile Include="Automation\Loot\AutoLoot.cs" />
+    <Compile Include="Automation\Potion\AutoPotion.cs" />
+    <Compile Include="Collection\AutoItemBuy\Log.cs" />
+    <Compile Include="Collection\Camera\CameraManager.cs" />
+    <Compile Include="Collection\DeezNutz\Base.cs" />
+    <Compile Include="Collection\LifeSkills\Clothes.cs" />
+    <Compile Include="Collection\Base\States.cs" />
+    <Compile Include="Collection\Fishing\Log.cs" />
+    <Compile Include="Automation\Worker\AutoRestore.cs" />
+    <Compile Include="Collection\Actors\Global.cs" />
+    <Compile Include="Collection\Actors\Local.cs" />
+    <Compile Include="Collection\Base\Events.cs" />
+    <Compile Include="Collection\Base\Ticks.cs" />
+    <Compile Include="Collection\Base\Values.cs" />
+    <Compile Include="Collection\Camera\ViewMatrix.cs" />
+    <Compile Include="Collection\Chat\Base.cs" />
+    <Compile Include="Collection\Client\Base.cs" />
+    <Compile Include="Collection\Fishing\Rods.cs" />
+    <Compile Include="Collection\ItemMarket\Base.cs" />
+    <Compile Include="Collection\Loot\Base.cs" />
+    <Compile Include="Collection\MainWindow\Base.cs" />
+    <Compile Include="Collection\Map\MapTiles.cs" />
+    <Compile Include="Collection\Mounts\Rides.cs" />
+    <Compile Include="Collection\NavMesh\Grid.cs" />
+    <Compile Include="Collection\NavMesh\Nodes.cs" />
+    <Compile Include="Collection\Objects\ActorObjects.cs" />
+    <Compile Include="Collection\Potion\Potions.cs" />
+    <Compile Include="Collection\Quests\Base.cs" />
+    <Compile Include="Collection\Region\Base.cs" />
+    <Compile Include="Collection\StaticSpawnData\GoldenChests.cs" />
+    <Compile Include="Collection\SystemVariables\Base.cs" />
+    <Compile Include="Collection\UI\Base.cs" />
+    <Compile Include="Collection\Warehouse\Base.cs" />
+    <Compile Include="Collection\Worker\Base.cs" />
+    <Compile Include="Collection\Worker\RestoreItems.cs" />
+    <Compile Include="Collection\World\Base.cs" />
+    <Compile Include="Collector.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="GameExternals\Enums\BuyState.cs" />
+    <Compile Include="GameExternals\Enums\ProcessingType.cs" />
+    <Compile Include="GameExternals\Structs\AutoItemBuy\ItemBuyObject.cs" />
+    <Compile Include="GameExternals\Structs\AutoItemRegister\ItemRegisterObject.cs" />
+    <Compile Include="GameExternals\Structs\AutoProcessing\ProcessingObject.cs" />
+    <Compile Include="GameExternals\Structs\DataLog\ActorDataLogEntry.cs" />
+    <Compile Include="GameExternals\Structs\Overlay\WaypointObject.cs" />
+    <Compile Include="GameExternals\Structs\Overlay\ActorObject.cs" />
+    <Compile Include="GameInternals\Enums\ActionInputType.cs" />
+    <Compile Include="GameInternals\Enums\ActorType.cs" />
+    <Compile Include="GameInternals\Enums\ApplyWorkingType.cs" />
+    <Compile Include="GameInternals\Enums\AuctionTabType.cs" />
+    <Compile Include="GameInternals\Enums\AuctionType.cs" />
+    <Compile Include="GameInternals\Enums\BattleSoundType.cs" />
+    <Compile Include="GameInternals\Enums\BuffType.cs" />
+    <Compile Include="GameInternals\Enums\BuyItemReqTrType.cs" />
+    <Compile Include="GameInternals\Enums\CashProductCategory.cs" />
+    <Compile Include="GameInternals\Enums\CashPurchaseLimitType.cs" />
+    <Compile Include="GameInternals\Enums\CharacterAnimation.cs" />
+    <Compile Include="GameInternals\Enums\CharacterGradeType.cs" />
+    <Compile Include="GameInternals\Enums\CharacterInfoDisplayType.cs" />
+    <Compile Include="GameInternals\Enums\ChatFontSizeType.cs" />
+    <Compile Include="GameInternals\Enums\ChatSystemType.cs" />
+    <Compile Include="GameInternals\Enums\ChatType.cs" />
+    <Compile Include="GameInternals\Enums\CheckedQuestSortMethod.cs" />
+    <Compile Include="GameInternals\Enums\ClassType.cs" />
+    <Compile Include="GameInternals\Enums\CollectToolType.cs" />
+    <Compile Include="GameInternals\Enums\CommandGuideKeyType.cs" />
+    <Compile Include="GameInternals\Enums\CompetitionFightState.cs" />
+    <Compile Include="GameInternals\Enums\CompetitionFreeForAll.cs" />
+    <Compile Include="GameInternals\Enums\CompetitionMatchType.cs" />
+    <Compile Include="GameInternals\Enums\ContentsEventType.cs" />
+    <Compile Include="GameInternals\Enums\ContentsGroupType.cs" />
+    <Compile Include="GameInternals\Enums\ContentsServiceType.cs" />
+    <Compile Include="GameInternals\Enums\ContentsType.cs" />
+    <Compile Include="GameInternals\Enums\ContryCode.cs" />
+    <Compile Include="GameInternals\Enums\CountryType.cs" />
+    <Compile Include="GameInternals\Enums\CustomizationNoCashDeco.cs" />
+    <Compile Include="GameInternals\Enums\CustomizationNoCashMesh.cs" />
+    <Compile Include="GameInternals\Enums\CustomizationNoCashType.cs" />
+    <Compile Include="GameInternals\Enums\CustomizationNoCashVoice.cs" />
+    <Compile Include="GameInternals\Enums\DelivererType.cs" />
+    <Compile Include="GameInternals\Enums\DialogButtonType.cs" />
+    <Compile Include="GameInternals\Enums\DialogQuestButtonType.cs" />
+    <Compile Include="GameInternals\Enums\DlgCommonConditionOperatorType.cs" />
+    <Compile Include="GameInternals\Enums\DropType.cs" />
+    <Compile Include="GameInternals\Enums\EChatNoticeType.cs" />
+    <Compile Include="GameInternals\Enums\eDeliveryProduct.cs" />
+    <Compile Include="GameInternals\Enums\EFlush_BlackSpirit_Ui_Type.cs" />
+    <Compile Include="GameInternals\Enums\eHouseUseType.cs" />
+    <Compile Include="GameInternals\Enums\EnduranceType.cs" />
+    <Compile Include="GameInternals\Enums\EProcessorInputMode.cs" />
+    <Compile Include="GameInternals\Enums\EquipSlotNo.cs" />
+    <Compile Include="GameInternals\Enums\ExplorationNodeType.cs" />
+    <Compile Include="GameInternals\Enums\FishEncyclopediaCategory.cs" />
+    <Compile Include="GameInternals\Enums\GameServiceType.cs" />
+    <Compile Include="GameInternals\Enums\GlobalUIOptionType.cs" />
+    <Compile Include="GameInternals\Enums\GuildGrade.cs" />
+    <Compile Include="GameInternals\Enums\GuildWarType.cs" />
+    <Compile Include="GameInternals\Enums\HarvestGrowRateKind.cs" />
+    <Compile Include="GameInternals\Enums\HouseGroupLocationType.cs" />
+    <Compile Include="GameInternals\Enums\HouseOwnerFilter.cs" />
+    <Compile Include="GameInternals\Enums\HouseUseableFilter.cs" />
+    <Compile Include="GameInternals\Enums\InGameCashShopPreviewType.cs" />
+    <Compile Include="GameInternals\Enums\InstallationType.cs" />
+    <Compile Include="GameInternals\Enums\InstantCashType.cs" />
+    <Compile Include="GameInternals\Enums\InstantLineRenderType.cs" />
+    <Compile Include="GameInternals\Enums\InteractionType.cs" />
+    <Compile Include="GameInternals\Enums\InventoryBagType.cs" />
+    <Compile Include="GameInternals\Enums\ItemClassifyType.cs" />
+    <Compile Include="GameInternals\Enums\ItemGrade.cs" />
+    <Compile Include="GameInternals\Enums\ItemMarketMainCategoryType.cs" />
+    <Compile Include="GameInternals\Enums\ItemProductCategory.cs" />
+    <Compile Include="GameInternals\Enums\ItemType.cs" />
+    <Compile Include="GameInternals\Enums\ItemWhereType.cs" />
+    <Compile Include="GameInternals\Enums\MatchType.cs" />
+    <Compile Include="GameInternals\Enums\MiniGame.cs" />
+    <Compile Include="GameInternals\Enums\MiniGameKeyType.cs" />
+    <Compile Include="GameInternals\Enums\MiniGameParam.cs" />
+    <Compile Include="GameInternals\Enums\MiniGameType.cs" />
+    <Compile Include="GameInternals\Enums\MouseCursorType.cs" />
+    <Compile Include="GameInternals\Enums\MoveItemToType.cs" />
+    <Compile Include="GameInternals\Enums\NaviMaterialType.cs" />
+    <Compile Include="GameInternals\Enums\NavPathEffectType.cs" />
+    <Compile Include="GameInternals\Enums\NpcWorkerState.cs" />
+    <Compile Include="GameInternals\Enums\NpcWorkingState.cs" />
+    <Compile Include="GameInternals\Enums\NpcWorkingType.cs" />
+    <Compile Include="GameInternals\Enums\OpenDirectoryType.cs" />
+    <Compile Include="GameInternals\Enums\OtherListType.cs" />
+    <Compile Include="GameInternals\Enums\OverheadUIType.cs" />
+    <Compile Include="GameInternals\Enums\Padding.cs" />
+    <Compile Include="GameInternals\Enums\PAGameUIType.cs" />
+    <Compile Include="GameInternals\Enums\PanelSaveType.cs" />
+    <Compile Include="GameInternals\Enums\PartIndex.cs" />
+    <Compile Include="GameInternals\Enums\PartyLootType.cs" />
+    <Compile Include="GameInternals\Enums\PAUIList2ElementManagerType.cs" />
+    <Compile Include="GameInternals\Enums\PAUIList2EventType.cs" />
+    <Compile Include="GameInternals\Enums\PAUIMB_PRIORITY.cs" />
+    <Compile Include="GameInternals\Enums\PAUI_ANIM_ADVANCE_TYPE.cs" />
+    <Compile Include="GameInternals\Enums\PAUI_SCALE_ANIM_TYPE.cs" />
+    <Compile Include="GameInternals\Enums\PAUI_SHOW_FADE_TYPE.cs" />
+    <Compile Include="GameInternals\Enums\PAUI_TEXTURE_TYPE.cs" />
+    <Compile Include="GameInternals\Enums\PA_UI_ALIGNHORIZON.cs" />
+    <Compile Include="GameInternals\Enums\PA_UI_ALIGNVERTICAL.cs" />
+    <Compile Include="GameInternals\Enums\PA_UI_ANI_TYPE.cs" />
+    <Compile Include="GameInternals\Enums\PA_UI_CLIP_OPERATOR.cs" />
+    <Compile Include="GameInternals\Enums\PA_UI_CONTROL_TYPE.cs" />
+    <Compile Include="GameInternals\Enums\PcWorkType.cs" />
+    <Compile Include="GameInternals\Enums\PetVisibleType.cs" />
+    <Compile Include="GameInternals\Enums\PlantLevelType.cs" />
+    <Compile Include="GameInternals\Enums\PlantTownLevelType.cs" />
+    <Compile Include="GameInternals\Enums\PlantType.cs" />
+    <Compile Include="GameInternals\Enums\PlantZoneLevelType.cs" />
+    <Compile Include="GameInternals\Enums\PositionGuideActorType.cs" />
+    <Compile Include="GameInternals\Enums\ProductCategory.cs" />
+    <Compile Include="GameInternals\Enums\QuestButtonType.cs" />
+    <Compile Include="GameInternals\Enums\QuestType.cs" />
+    <Compile Include="GameInternals\Enums\QuickSlotType.cs" />
+    <Compile Include="GameInternals\Enums\RegionManagingType.cs" />
+    <Compile Include="GameInternals\Enums\RegionType.cs" />
+    <Compile Include="GameInternals\Enums\CombatResouceType.cs" />
+    <Compile Include="GameInternals\Enums\RewardType.cs" />
+    <Compile Include="GameInternals\Enums\ServantKind.cs" />
+    <Compile Include="GameInternals\Enums\ServantRegist.cs" />
+    <Compile Include="GameInternals\Enums\ServantStateType.cs" />
+    <Compile Include="GameInternals\Enums\ServantStatType.cs" />
+    <Compile Include="GameInternals\Enums\ServantToRewardType.cs" />
+    <Compile Include="GameInternals\Enums\ServantType.cs" />
+    <Compile Include="GameInternals\Enums\ServantWhereType.cs" />
+    <Compile Include="GameInternals\Enums\ServiceResourceType.cs" />
+    <Compile Include="GameInternals\Enums\SkillAwakeningType.cs" />
+    <Compile Include="GameInternals\Enums\SpawnType.cs" />
+    <Compile Include="GameInternals\Enums\TaxType.cs" />
+    <Compile Include="GameInternals\Enums\TextMode.cs" />
+    <Compile Include="GameInternals\Enums\TransferType.cs" />
+    <Compile Include="GameInternals\Enums\TreeItemType.cs" />
+    <Compile Include="GameInternals\Enums\TribeType.cs" />
+    <Compile Include="GameInternals\Enums\UiInputType.cs" />
+    <Compile Include="GameInternals\Enums\UserChargeType.cs" />
+    <Compile Include="GameInternals\Enums\VehicleType.cs" />
+    <Compile Include="GameInternals\Enums\VillageSiegeType.cs" />
+    <Compile Include="GameInternals\Enums\VirtualKeyCode.cs" />
+    <Compile Include="GameInternals\Enums\VisibleCharacterMode.cs" />
+    <Compile Include="GameInternals\Enums\VisibleNameTagType.cs" />
+    <Compile Include="GameInternals\Enums\VoiceChatType.cs" />
+    <Compile Include="GameInternals\Enums\WaitWorkerSortMethod.cs" />
+    <Compile Include="GameInternals\Enums\WarehoouseFromType.cs" />
+    <Compile Include="GameInternals\Enums\WeatherKind.cs" />
+    <Compile Include="GameInternals\Enums\WEATHER_SYSTEM_FACTOR_TYPE.cs" />
+    <Compile Include="GameInternals\Enums\WorldMapAnimationStyle.cs" />
+    <Compile Include="GameInternals\Enums\WorldMapCheckState.cs" />
+    <Compile Include="GameInternals\Enums\worldmapRenderState.cs" />
+    <Compile Include="GameInternals\Enums\WorldMapState.cs" />
+    <Compile Include="GameInternals\Structs\Actors\ActorData.cs" />
+    <Compile Include="GameInternals\Structs\Actors\ActorList.cs" />
+    <Compile Include="GameInternals\Structs\Actors\AnimationData.cs" />
+    <Compile Include="GameInternals\Structs\Actors\BuffData.cs" />
+    <Compile Include="GameInternals\Structs\Actors\BuffList.cs" />
+    <Compile Include="GameInternals\Structs\Actors\BuffTableData.cs" />
+    <Compile Include="GameInternals\Structs\Actors\CharacterControl.cs" />
+    <Compile Include="GameInternals\Structs\Actors\CharacterScene.cs" />
+    <Compile Include="GameInternals\Structs\Actors\EquipmentItem.cs" />
+    <Compile Include="GameInternals\Structs\Actors\PlayerInventoryItem.cs" />
+    <Compile Include="GameInternals\Structs\Actors\ItemData.cs" />
+    <Compile Include="GameInternals\Structs\Actors\LocalPlayer.cs" />
+    <Compile Include="GameInternals\Structs\Actors\PlayerInventory.cs" />
+    <Compile Include="GameInternals\Structs\Actors\VTable.cs" />
+    <Compile Include="GameInternals\Structs\Base\GameState.cs" />
+    <Compile Include="GameInternals\Structs\Base\InputEventListener.cs" />
+    <Compile Include="GameInternals\Structs\Base\Ticks.cs" />
+    <Compile Include="GameInternals\Structs\Base\Values.cs" />
+    <Compile Include="GameInternals\Structs\Camera\CameraManager.cs" />
+    <Compile Include="GameInternals\Structs\Camera\ViewMatrix.cs" />
+    <Compile Include="GameInternals\Structs\Chat\ChatList.cs" />
+    <Compile Include="GameInternals\Structs\Chat\ChatMessageEntry.cs" />
+    <Compile Include="GameInternals\Structs\DeezNutz\DeezNutz.cs" />
+    <Compile Include="GameInternals\Structs\DeezNutz\NameEntry.cs" />
+    <Compile Include="GameInternals\Structs\DeezNutz\DNEntry.cs" />
+    <Compile Include="GameInternals\Structs\ItemMarket\MarketItemData.cs" />
+    <Compile Include="GameInternals\Structs\ItemMarket\MarketList.cs" />
+    <Compile Include="GameInternals\Structs\ItemMarket\SellInfo.cs" />
+    <Compile Include="GameInternals\Structs\ItemMarket\SellInfoList.cs" />
+    <Compile Include="GameInternals\Structs\Loot\Looting.cs" />
+    <Compile Include="GameInternals\Structs\Loot\LootItem.cs" />
+    <Compile Include="GameInternals\Structs\MainWindow\MainWindow.cs" />
+    <Compile Include="GameInternals\Structs\Map\MapTiles.cs" />
+    <Compile Include="GameInternals\Structs\Mounts\Vehicle.cs" />
+    <Compile Include="GameInternals\Structs\Mounts\MountInventory.cs" />
+    <Compile Include="GameInternals\Structs\Mounts\MountInventoryItem.cs" />
+    <Compile Include="GameInternals\Structs\Objects\ActorObjectData.cs" />
+    <Compile Include="GameInternals\Structs\Objects\ObjectData.cs" />
+    <Compile Include="GameInternals\Structs\Objects\ActorObjectDataList.cs" />
+    <Compile Include="GameInternals\Structs\Quests\GuildQuest.cs" />
+    <Compile Include="GameInternals\Structs\Quests\GuildQuestData.cs" />
+    <Compile Include="GameInternals\Structs\Quests\GuildQuests.cs" />
+    <Compile Include="GameInternals\Structs\Region\RegionBase.cs" />
+    <Compile Include="GameInternals\Structs\Region\RegionData.cs" />
+    <Compile Include="GameInternals\Structs\Region\RegionInfo.cs" />
+    <Compile Include="GameInternals\Structs\Region\RegionInfoManager.cs" />
+    <Compile Include="GameInternals\Structs\Region\RegionListEntry.cs" />
+    <Compile Include="GameInternals\Structs\Skills\SkillData.cs" />
+    <Compile Include="GameInternals\Structs\Skills\SkillInfo.cs" />
+    <Compile Include="GameInternals\Structs\SystemVariables\SystemVariable.cs" />
+    <Compile Include="GameInternals\Structs\SystemVariables\SystemVariables.cs" />
+    <Compile Include="GameInternals\Structs\UI\UIBase.cs" />
+    <Compile Include="GameInternals\Structs\UI\UIControl.cs" />
+    <Compile Include="GameInternals\Structs\Warehouse\CurrentWarehouse.cs" />
+    <Compile Include="GameInternals\Structs\Warehouse\WarehouseInventory.cs" />
+    <Compile Include="GameInternals\Structs\Warehouse\WarehouseInventoryItem.cs" />
+    <Compile Include="GameInternals\Structs\Worker\WorkerData.cs" />
+    <Compile Include="GameInternals\Structs\Worker\WorkerDetails.cs" />
+    <Compile Include="GameInternals\Structs\Worker\WorkerList.cs" />
+    <Compile Include="GameInternals\Structs\World\WorldMap.cs" />
+    <Compile Include="Automation\Fishing\AutoFish.cs" />
+    <Compile Include="Helpers\NavMesh\Grid.cs" />
+    <Compile Include="Helpers\NavMesh\Nodes.cs" />
+    <Compile Include="Helpers\Timers\RandomTimes.cs" />
+    <Compile Include="Helpers\ViewTransform\ToScreen.cs" />
+    <Compile Include="Helpers\World\DistanceHelper.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Memory\MemoryObject.cs" />
+    <Compile Include="Memory\MemoryReader.cs" />
+    <Compile Include="Memory\MemoryWriter.cs" />
+    <Compile Include="Offsets.cs" />
+    <Compile Include="Pipe\Call.cs" />
+    <Compile Include="Pipe\LuaFunctions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Win32.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

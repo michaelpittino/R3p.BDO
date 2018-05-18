@@ -1,0 +1,65 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace R3p.bdo
+{
+	public enum ContentsEventType
+	{
+		ContentsType_Housing = 0,
+		 ContentsType_SkillInitialize = 1,
+		 ContentsType_NpcWorker = 2,
+		 ContentsType_Mail = 3,
+		 ContentsType_GuildMark = 4,
+		 ContentsType_Campfire = 5,
+		 ContentsType_ItemBox = 6,
+		 ContentsType_ChangeServantName = 7,
+		 ContentsType_ChangeServantSkill = 8,
+		 ContentsType_CollectByTool = 9,
+		 ContentsType_CarveSeal = 10,
+		 ContentsType_ResetSeal = 11,
+		 ContentsType_PetRegister = 12,
+		 ContentsType_PetFeed = 13,
+		 ContentsType_ClearVested = 14,
+		 ContentsType_Respawn = 15,
+		 ContentsType_OrderToServant = 16,
+		 ContentsType_NpcWorkerRecovery = 17,
+		 ContentsType_ChangeNickName = 18,
+		 ContentsType_ClearServantDeadCount = 19,
+		 ContentsType_ClearServantMatingCount = 20,
+		 ContentsType_ImprintServant = 21,
+		 ContentsType_Roulette = 22,
+		 ContentsType_RemoveKnowledge = 23,
+		 ContentsType_HelpReward = 24,
+		 ContentsType_SummonCharacter = 25,
+		 ContentsType_ReleaseImprintServant = 26,
+		 ContentsType_HelpEndurance = 27,
+		 ContentsType_TransferLifeExperience = 28,
+		 ContentsType_ChangeFormServant = 29,
+		 ContentsType_ItemChange = 30,
+		 ContentsType_CustomizedItemBox = 31,
+		 ContentsType_Stone = 32,
+		 ContentsType_ServantSkillExpTraining = 33,
+		 ContentsType_ConvertEnchantFailCountToItem = 34,
+		 ContentsType_ConvertEnchantFailItemToCount = 35,
+		 ContentsType_ForgetServantSkill = 36,
+		 ContentsType_Rubbing = 37,
+		 ContentsType_ItemExchangeToClass = 38,
+		 ContentsType_AddGuildQuestReward = 39,
+		 ContentsType_SellWarehouseItemToSystem = 40,
+		 ContentsType_PetChangeLook = 41,
+		 ContentsType_LanternAttribute = 42,
+		 ContentsType_Seal = 43,
+		 ContentsType_SkillAwakeningPeriod = 44,
+		 ContentsType_Banquet = 45,
+		 ContentsType_ChannelBattleExpItem = 46,
+		 ContentsType_Warp = 47,
+		 ContentsType_ExchangeBattleAndSkillExp = 48,
+		 ContentsType_SealItemBox = 49,
+		 ContentsType_SealItemBoxKey = 50,
+		 ContentsType_InventoryBag = 51,
+		 ContentsType_Count = 52,
+	}
+}
