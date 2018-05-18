@@ -24,8 +24,6 @@ bld/
 
 FtpCredendtials.cs
 *.ffs_db
-*.bin
-*.dll
 
 # Visual Studio 2015 cache/options directory
 .vs/
