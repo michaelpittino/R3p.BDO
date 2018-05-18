@@ -25,7 +25,6 @@ using R3p.bdo.Pipe;
 using R3p.bdo.settings;
 using R3p.injector;
 using FluentFTP;
-using R3p.bdo.GUIloader;
 using MainWindow = R3p.bdo.ui.MainWindow;
 
 namespace R3p.bdo.testconsole
