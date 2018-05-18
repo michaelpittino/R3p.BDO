@@ -1,7 +1,7 @@
 
 		local VCK = CppEnums.VirtualKeyCode
 		local ScreenX = getScreenSizeX()
-		local ScreenY = getScreenSizeY()
+		local ScreenY = getScreenSizeY()  
 		local tDmg = 0
 		local Misses = 0
 		local dDmg = 0
@@ -163,8 +163,7 @@
 			    dMessage("<PAColor0xFF0099CC>Miss<PAOldColor>")
 			end	
 			
-			end
-			
+			end			
 		  end
 		end
 
@@ -512,10 +511,7 @@ function CheckMessageBoxState()
       Panel_Minigame_GradientY_End()
     end
   end
-  
-  function GameStart()
-  FromClient_TradeGameResult(true)  
-  end
+   
   
   alrdyCollected = false;
 
@@ -654,9 +650,10 @@ end
 end
    
    function CheckMilkyGame()
-      if Panel_MiniGame_PowerControl:GetShow() then
-        Panel_MiniGame_PowerControl_Success()
-        Panel_MiniGame_PowerControl_End()
+      if Panel_MiniGame_PowerControl:GetShow() then        
+        ToClient_MinigameResult(1, true)
+        FGlobal_MiniGame_PowerControl()
+        getSelfPlayer():get():SetMiniGameResult( 0 )    
       end
      end      
    
@@ -668,6 +665,7 @@ end
           tryCollectMoney()
           OverrideItemMarketButtons()
           Update_Mem()
+          FreeMem()
           end
         
 
@@ -675,7 +673,7 @@ end
           registerEvent("addDamage","DamageFunction_OnDamage")
 			registerEvent("EventGlobalKeyBinder", "Display_Toggle")
 			registerEvent( "FromClient_LuaTimer_UpdatePerFrame","UpdatePerFrame()")
-      registerEvent("FromClient_TradeGameStart", "GameStart")
+      
           end
         
         function LoadMods()
@@ -690,7 +688,7 @@ end
           unregisterEvent("addDamage","DamageFunction_OnDamage")
 			unregisterEvent("EventGlobalKeyBinder", "Display_Toggle")
 			unregisterEvent( "FromClient_LuaTimer_UpdatePerFrame","UpdatePerFrame()")
-      unregisterEvent( "FromClient_TradeGameStart","GameStart")	
+      --unregisterEvent( "FromClient_TradeGameStart","GameStart")	
           end
         
         function UnloadMods()  
