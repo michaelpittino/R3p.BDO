@@ -20,3 +20,6 @@ All dependend projects + dll project + loader project are inside "Imports" folde
 - SharpDX.Direct2D1
 - SharpDX.DXGI
 - SharpDX.Mathematics
+
+!v753 x64 BDO client dump for analyze purposes!
+https://mega.nz/#!lHJEyRrS!IluBtUDZgEJ1LXwhWb3svGzC7vyU-HAsxDBlIUHPXRA
