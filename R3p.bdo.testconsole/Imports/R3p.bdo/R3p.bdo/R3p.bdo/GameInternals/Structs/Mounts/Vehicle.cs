@@ -9,7 +9,7 @@ namespace R3p.bdo.GameInternals.Structs.Mounts
 {
     public class Vehicle : MemoryObject
     {
-        public static int oAccel = 0x22C0;//-
+        public static int oAccel = 0x22C8;//-
         public static int oSpeed = oAccel + 4;//-
         public static int oTurn = oSpeed + 4;//-
         public static int oBrake = oTurn + 4;//-

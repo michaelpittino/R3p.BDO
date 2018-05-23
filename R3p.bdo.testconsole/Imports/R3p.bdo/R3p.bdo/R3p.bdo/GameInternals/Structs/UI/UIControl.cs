@@ -46,8 +46,8 @@ namespace R3p.bdo.GameInternals.Structs.UI
         public float x0258_ScaleY => ReadFloat(0x0258);
         public float x026C_SizeXOrigin => ReadFloat(0x026C);
         public float x0270_SizeYOrigin => ReadFloat(0x0270);
-        public long x0288_ListChildControls => ReadPointer8b(0x0290);
-        public long x0290_ListChildControlsEnd => ReadPointer8b(0x0298);
+        public long x0288_ListChildControls => ReadPointer8b(0x1A8);
+        public long x0290_ListChildControlsEnd => ReadPointer8b(0x1B0);
         public byte x032B_AlphaIgnore => ReadByte(0x032B);
         public float x0338_WorldPosX => ReadFloat(0x0338);
         public float x033C_WorldPosY => ReadFloat(0x033C);
@@ -267,10 +267,10 @@ namespace R3p.bdo.GameInternals.Structs.UI
         private string _bText;
         public string GetText()
         {
-            _bText = ReadStringUnicode(0x0378);
+            _bText = ReadStringUnicode(0x0360);
 
                 if (_bText.Length == 0)
-                    _bText = ReadStringUnicode(ReadPointer8b(0x0378));
+                    _bText = ReadStringUnicode(ReadPointer8b(0x0360));
             
 
             return _bText;

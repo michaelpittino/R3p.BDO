@@ -23,8 +23,8 @@ namespace R3p.bdo.Automation.Hacks
 
             ItemSetPanel = Collection.UI.Base.UIBase.AllPanels.FirstOrDefault(x => x.GetName().ToLower().Contains("itemset"));
 
-            if(ItemSetPanel != null)
-                Btn_GetAllItems = ItemSetPanel.Children.FirstOrDefault(x => x.GetName().ToLower().Contains("getallitem"));
+            //if(ItemSetPanel != null)
+            //    Btn_GetAllItems = ItemSetPanel.Children.FirstOrDefault(x => x.GetName().ToLower().Contains("getallitem"));
         }
 
         public void Run()
