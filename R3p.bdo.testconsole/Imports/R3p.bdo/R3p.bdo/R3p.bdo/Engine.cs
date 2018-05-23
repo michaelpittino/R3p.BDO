@@ -12,7 +12,7 @@ namespace R3p.bdo
     public class Engine
     {
         public static Engine Instance;
-        public static  int _supportedVersion = 759;
+        public static  int _supportedVersion = 760;
 
         public static void Create(string pName)
         {
