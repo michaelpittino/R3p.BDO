@@ -52,10 +52,10 @@ How to compile sources?
 - SharpDX.Mathematics
 
 
-Compiled sources
+BlackDesertx64 Dumps
 ----------------
 
-- [ ] Download v760 : **TODO**
+- [x] Download v760 : use v759
 - [x] _`Download v759`: https://mega.nz/#!pfxChYKL!aq0DobI13uJjyAcONapmwUZnRiJfEU9YJE5lSZL6zzc
 - [x] _`Download v753`: https://mega.nz/#!lHJEyRrS!IluBtUDZgEJ1LXwhWb3svGzC7vyU-HAsxDBlIUHPXRA
 
