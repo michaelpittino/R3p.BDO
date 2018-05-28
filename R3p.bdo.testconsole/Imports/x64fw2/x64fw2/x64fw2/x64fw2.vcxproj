@@ -113,11 +113,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ByteBuffer.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Threading\ThreadContext.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Addresses.h" />
+    <ClInclude Include="ByteBuffer.h" />
     <ClInclude Include="Functions.h" />
     <ClInclude Include="Hooks.h" />
     <ClInclude Include="MinHook\MinHook.h" />

@@ -149,6 +149,10 @@ void MainThread(HMODULE hModule)
 			{
 				set_playerspeeds((int)arg1, (int)arg2, (int)arg3);
 			}
+			else if (eventName == "SetVehicleSpeeds")
+			{
+				set_vehiclespeeds((int)arg1, (int)arg2, (int)arg3, (int)arg4, (int)arg5);
+			}
 			else if (eventName == "Eject")
 			{
 				exit = true;

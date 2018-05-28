@@ -17,6 +17,22 @@ namespace R3p.bdo.Pipe
 
     public class Call
     {
+        public static void SetVehicleSpeeds(int actorId, int accel, int speed, int turn, int brake)
+        {
+            //ManualResetEvent SyncClientServer = (ManualResetEvent)obj;
+            using (NamedPipeClientStream pipeStream = new NamedPipeClientStream("PipesOfPiece"))
+            {
+                pipeStream.Connect();
+
+                //MessageBox.Show(“[Client] Pipe connection established”);
+                using (StreamWriter sw = new StreamWriter(pipeStream))
+                {
+                    sw.AutoFlush = true;
+                    sw.WriteLine("SetVehicleSpeeds" + " " + Engine.Instance.mThread.Id + " " + actorId + " " + accel + " " + speed + " " + turn + " " + brake);
+                }
+            }
+        }
+
         public static void SetPlayerSpeeds(int mvmt, int atk, int cst)
         {
             //ManualResetEvent SyncClientServer = (ManualResetEvent)obj;

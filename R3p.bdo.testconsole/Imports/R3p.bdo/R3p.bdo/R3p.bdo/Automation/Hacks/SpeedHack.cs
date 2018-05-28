@@ -214,6 +214,7 @@ namespace R3p.bdo.Automation.Hacks
         {
             if (Collection.Mounts.Rides.CurrentVehicle.ServantType == ServantType.Type_Vehicle && Horse.Enabled && (Collection.Mounts.Rides.CurrentVehicle.Speed < Horse.Speed * 10000 || Collection.Mounts.Rides.CurrentVehicle.Speed > Horse.Speed * 10000))
             {
+                //Collection.Mounts.Rides.CurrentVehicle.SetSpeeds(Horse.Accel, Horse.Speed, Horse.Turn, Horse.Brake);
                 Collection.Mounts.Rides.CurrentVehicle.SetAccel(Horse.Accel);
                 Collection.Mounts.Rides.CurrentVehicle.SetSpeed(Horse.Speed);
                 Collection.Mounts.Rides.CurrentVehicle.SetTurn(Horse.Turn);
@@ -223,6 +224,7 @@ namespace R3p.bdo.Automation.Hacks
             }
             else if(Collection.Mounts.Rides.CurrentVehicle.ServantType == ServantType.Type_Ship && Ship.Enabled && (Collection.Mounts.Rides.CurrentVehicle.Speed < Ship.Speed * 10000 || Collection.Mounts.Rides.CurrentVehicle.Speed > Ship.Speed * 10000))
             {
+                //Collection.Mounts.Rides.CurrentVehicle.SetSpeeds(Ship.Accel, Ship.Speed, Ship.Turn, Ship.Brake);
                 Collection.Mounts.Rides.CurrentVehicle.SetAccel(Ship.Accel);
                 Collection.Mounts.Rides.CurrentVehicle.SetSpeed(Ship.Speed);
                 Collection.Mounts.Rides.CurrentVehicle.SetTurn(Ship.Turn);
@@ -236,12 +238,14 @@ namespace R3p.bdo.Automation.Hacks
         {
             if (Collection.Mounts.Rides.CurrentVehicle.ServantType == ServantType.Type_Vehicle && Horse.Enabled && Collection.Mounts.Rides.CurrentVehicle.Speed >= Horse.Speed * 10000)
             {
+                //Collection.Mounts.Rides.CurrentVehicle.SetSpeeds(Horse.Accel, 0, Horse.Turn, Horse.Brake);
                 Collection.Mounts.Rides.CurrentVehicle.SetSpeed(0);
-                
+
                 Log.Post("Zeroed Horse Speeds", LogModule.Hack_Speedhack);
             }
             else if (Collection.Mounts.Rides.CurrentVehicle.ServantType == ServantType.Type_Ship && Ship.Enabled && Collection.Mounts.Rides.CurrentVehicle.Speed >= Ship.Speed * 10000)
             {
+                //Collection.Mounts.Rides.CurrentVehicle.SetSpeeds(Ship.Accel, 0, Ship.Turn, Ship.Brake);
                 Collection.Mounts.Rides.CurrentVehicle.SetSpeed(0);
 
                 Log.Post("Zeroed Ship Speeds", LogModule.Hack_Speedhack);
@@ -252,8 +256,7 @@ namespace R3p.bdo.Automation.Hacks
         {
             if (Collection.Mounts.Rides.CurrentVehicle.ServantType == ServantType.Type_Vehicle && Horse.Enabled && Collection.Mounts.Rides.CurrentVehicle.Speed >= Horse.Speed*10000)
             {
-                //SetZeroSpeed();
-                //Thread.Sleep(1000);
+                //Collection.Mounts.Rides.CurrentVehicle.SetSpeeds(Horse.DefaultAccel, Horse.DefaultSpeed, Horse.DefaultTurn, Horse.DefaultBrake);
 
                 Collection.Mounts.Rides.CurrentVehicle.SetAccel(Horse.DefaultAccel);
                 Collection.Mounts.Rides.CurrentVehicle.SetSpeed(Horse.DefaultSpeed);
@@ -266,6 +269,8 @@ namespace R3p.bdo.Automation.Hacks
             {
                 SetZeroSpeed();
                 Thread.Sleep(1500);
+
+                //Collection.Mounts.Rides.CurrentVehicle.SetSpeeds(Ship.DefaultAccel, Ship.DefaultSpeed, Ship.DefaultTurn, Ship.DefaultBrake);
 
                 Collection.Mounts.Rides.CurrentVehicle.SetAccel(Ship.DefaultAccel);
                 Collection.Mounts.Rides.CurrentVehicle.SetSpeed(Ship.DefaultSpeed);
