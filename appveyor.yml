@@ -1,0 +1,37 @@
+version: '1.0.{build}'
+environment:
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2015"
+      VSENV: "vs2k15"
+    - APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2017"
+      VSENV: "vs2k17"
+branches:
+  only:
+    - master
+    - ci_appveyor
+init:
+  # Good practise, because Windows line endings are different from Unix/Linux ones
+  - cmd: git config --global core.autocrlf true
+install:
+  # Install repo specific stuff here
+before_build:
+  # Display .NET Core version
+  - cmd: dotnet --version
+build_script:
+  - cmd: dotnet msbuild /p:configuration=release R3p.bdo.testconsole\R3p.bdo.testconsole.csproj
+after_build:
+  # For once the build has completed
+  - cmd: dotnet publish R3p.bdo.testconsole\R3p.bdo.testconsole.csproj
+artifacts:
+ - path: R3p.bdo.testconsole\\bin\Release\\*.*
+   type: Auto
+clone_depth: 1
+test_script:
+  # restore packages for our unit tests
+  # - cmd: dotnet restore ./tests/tests.csproj --verbosity m
+  # run the unit tests (requires changing into the test directory)
+  # - cmd: cd tests
+  # - cmd: dotnet xunit
+on_finish :
+  # any cleanup in here
+deploy: off
