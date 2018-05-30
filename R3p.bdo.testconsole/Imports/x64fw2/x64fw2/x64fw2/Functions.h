@@ -4,7 +4,7 @@
 #include "Hooks.h"
 #include "ByteBuffer.h"
 
-typedef __int64(__fastcall* SetLocalPlayerSpeeds)(__int64 localActor, char* packetBody);
+typedef void(__fastcall* SetLocalPlayerSpeeds)(__int64 localActor, unsigned __int8 speedIndex, int speedValue, int a4);
 SetLocalPlayerSpeeds f_SetSpeeds = NULL;
 
 typedef __int64(__fastcall* SetVehicleStats)(__int64 VTableServantStats, __int64 VTableActorRoot, char* PacketData, WORD PacketDataLength);
@@ -58,15 +58,11 @@ void set_playerspeeds(int mvmt = 0, int atk = 0, int cst = 0)
 	__int64 _setCharacterSpeeds = *(__int64*)(*(__int64*)(*(__int64*)(_localPlayer) + 0x00) + 0x378);
 		
 	f_SetSpeeds = (SetLocalPlayerSpeeds)_setCharacterSpeeds;
-		
-	ByteBuffer* buffer = new ByteBuffer(12);
-	buffer->putInt(mvmt);
-	buffer->putInt(atk);
-	buffer->putInt(cst);
-
-	f_SetSpeeds(*(__int64*)_localPlayer, (char*)&buffer->buf[0]);
-		
-	delete buffer;
+			
+	
+	f_SetSpeeds(*(__int64*)_localPlayer, 0, mvmt, 0);	
+	f_SetSpeeds(*(__int64*)_localPlayer, 1, atk, 0);
+	f_SetSpeeds(*(__int64*)_localPlayer, 2, cst, 0);
 }
 
 void looting_PickItems(int lootingType)
