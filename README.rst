@@ -55,6 +55,7 @@ How to compile sources?
 BlackDesertx64 Dumps
 ----------------
 
+- [x] _`Download v768`: https://mega.nz/#!nCRjQRoR!TkARcgyJgieS5ziiEQjddNMl3qIzZex6L8S7_m2cBBg
 - [x] Download v760 : use v759
 - [x] _`Download v759`: https://mega.nz/#!pfxChYKL!aq0DobI13uJjyAcONapmwUZnRiJfEU9YJE5lSZL6zzc
 - [x] _`Download v753`: https://mega.nz/#!lHJEyRrS!IluBtUDZgEJ1LXwhWb3svGzC7vyU-HAsxDBlIUHPXRA
