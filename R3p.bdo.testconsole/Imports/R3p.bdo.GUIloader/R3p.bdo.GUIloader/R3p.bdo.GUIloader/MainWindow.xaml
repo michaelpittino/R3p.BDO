@@ -7,23 +7,86 @@
         mc:Ignorable="d"
         Title="R3p.BDO" Height="350" Width="525" ResizeMode="NoResize" Icon="favicon.ico" Background="White" WindowStartupLocation="Manual">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="98*"/>
+            <ColumnDefinition Width="76*"/>
+            <ColumnDefinition Width="345*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="Resources/bg001_bw.jpg" Opacity="0.4"/>
         </Grid.Background>
-        <TextBox x:Name="tbPath" HorizontalAlignment="Left" Height="23" Margin="88,288,0,10" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="296" IsReadOnly="True" Background="{x:Null}" BorderBrush="{x:Null}" VerticalContentAlignment="Center" PreviewMouseLeftButtonUp="tbPath_PreviewMouseLeftButtonUp"/>
-        <TextBox x:Name="tbLog" HorizontalAlignment="Left" Height="200" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="305" Background="{x:Null}" BorderBrush="White" IsReadOnly="True"/>
-        <Label x:Name="label" Content="" HorizontalAlignment="Left" Margin="422,257,0,0" VerticalAlignment="Top" Width="87" PreviewMouseLeftButtonUp="label_PreviewMouseLeftButtonUp">
-            <Label.Background>
-                <ImageBrush ImageSource="Resources/btn_donate_SM.gif"/>
-            </Label.Background>
-        </Label>
-        <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="434,10,0,0" VerticalAlignment="Top" Width="75" Click="btnStart_Click"/>
-        <TextBox x:Name="tbKey" HorizontalAlignment="Left" Height="23" Margin="88,260,0,38" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="227" IsReadOnly="False" Background="{x:Null}" BorderBrush="{x:Null}" VerticalContentAlignment="Center" TextChanged="tbKey_TextChanged" IsEnabled="False"/>
-        <TextBox x:Name="tbUser" HorizontalAlignment="Left" Height="23" Margin="88,232,0,66" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="227" IsReadOnly="False" Background="{x:Null}" BorderBrush="{x:Null}" VerticalContentAlignment="Center" TextChanged="tbUser_TextChanged" IsEnabled="False"/>
-        <Label x:Name="label1" Content="Username" HorizontalAlignment="Left" Margin="10,232,0,0" VerticalAlignment="Top" Height="23" Width="73" VerticalContentAlignment="Center" Padding="5,0" IsEnabled="False"/>
-        <Label x:Name="label1_Copy" Content="Key" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Height="23" Width="73" VerticalContentAlignment="Center" Padding="5,0" IsEnabled="False"/>
-        <Label x:Name="label1_Copy1" Content="Path" HorizontalAlignment="Left" Margin="10,288,0,0" VerticalAlignment="Top" Height="23" Width="73" VerticalContentAlignment="Center" Padding="5,0"/>
-        <CheckBox x:Name="cbAutoUpdate" Content="Enable AutoUpdate" HorizontalAlignment="Left" Margin="320,39,0,0" VerticalAlignment="Top" Click="cbAutoUpdate_Click"/>
-
+        <TabControl HorizontalAlignment="Left" Height="321" Margin="-2,0,0,0" VerticalAlignment="Top" Width="521" Grid.ColumnSpan="3">
+            <TabItem Header="Home">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="tbLog" HorizontalAlignment="Left" Height="237" Margin="6,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="499" Background="{x:Null}" BorderBrush="White" IsReadOnly="True"/>
+                    <Label x:Name="label" Content="" HorizontalAlignment="Left" Margin="428,267,0,0" VerticalAlignment="Top" Width="87" PreviewMouseLeftButtonUp="label_PreviewMouseLeftButtonUp">
+                        <Label.Background>
+                            <ImageBrush ImageSource="Resources/btn_donate_SM.gif"/>
+                        </Label.Background>
+                    </Label>
+                    <Label Content="Logger" HorizontalAlignment="Left" Margin="0,-2,0,0" VerticalAlignment="Top" Height="27" Width="50"/>
+                    <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="361,270,0,0" VerticalAlignment="Top" Width="62" Click="btnStart_Click"/>
+                    <TextBox x:Name="tbPath" HorizontalAlignment="Left" Height="23" Margin="79,268,0,2" TextWrapping="Wrap" Text="Click here to load BDO path..." VerticalAlignment="Center" Width="277" IsReadOnly="True" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" BorderBrush="{x:Null}" VerticalContentAlignment="Center" PreviewMouseLeftButtonUp="tbPath_PreviewMouseLeftButtonUp"/>
+                    <Label x:Name="label1_Copy1" Content="BDO Path" HorizontalAlignment="Left" Margin="6,267,0,0" VerticalAlignment="Top" Height="23" Width="64" VerticalContentAlignment="Center" Padding="5,0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="FTP" HorizontalAlignment="Left" Width="35">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="67*"/>
+                        <ColumnDefinition Width="18*"/>
+                        <ColumnDefinition Width="21"/>
+                        <ColumnDefinition Width="79*"/>
+                        <ColumnDefinition Width="330*"/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox x:Name="cbAutoUpdate" Content="Enable AutoUpdate" HorizontalAlignment="Left" Margin="167,28,0,0" VerticalAlignment="Top" Click="cbAutoUpdate_Click" Grid.Column="4"/>
+                    <TextBox x:Name="tbKey" HorizontalAlignment="Left" Height="23" Margin="3,40,0,230" TextWrapping="Wrap" Text="Type FTP password here..." VerticalAlignment="Center" Width="227" IsReadOnly="False" BorderBrush="{x:Null}" VerticalContentAlignment="Center" TextChanged="tbKey_TextChanged" IsEnabled="False" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Grid.Column="2" Grid.ColumnSpan="3"/>
+                    <Label x:Name="label1_Copy" Content="FTP pass" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Height="23" Width="73" VerticalContentAlignment="Center" Padding="5,0" Grid.ColumnSpan="2"/>
+                    <Label x:Name="label1" Content="FTP user" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Height="23" Width="73" VerticalContentAlignment="Center" Padding="5,0" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="tbUser" HorizontalAlignment="Left" Height="23" Margin="3,12,0,258" TextWrapping="Wrap" Text="Type FTP user here..." VerticalAlignment="Center" Width="227" IsReadOnly="False" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" BorderBrush="{x:Null}" VerticalContentAlignment="Center" TextChanged="tbUser_TextChanged" IsEnabled="False" Grid.Column="2" Grid.ColumnSpan="3"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Settings" HorizontalAlignment="Left" Width="64" Margin="-2,-2,-27,0">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="67*"/>
+                        <ColumnDefinition Width="18*"/>
+                        <ColumnDefinition Width="21"/>
+                        <ColumnDefinition Width="79*"/>
+                        <ColumnDefinition Width="330*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="AutoFish" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF01146C" Width="73" FontFamily="Arial Black" FontSize="8" Grid.ColumnSpan="2"/>
+                    <CheckBox Content="Enabled" Margin="0,24,10,255" FontSize="10" IsEnabled="False"/>
+                    <CheckBox Content="FishDataLog" Margin="0,43,10,236" FontSize="10" Grid.ColumnSpan="2" IsEnabled="False"/>
+                    <CheckBox Content="HighLatencyMode" Margin="12,24,0,255" FontSize="10" Grid.ColumnSpan="3" Grid.Column="1" IsEnabled="False"/>
+                    <CheckBox Content="PredictMode" Margin="12,43,0,236" FontSize="10" Grid.ColumnSpan="3" Grid.Column="1" IsEnabled="False"/>
+                    <ComboBox Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="5,64,0,0" VerticalAlignment="Top" Width="103" FontSize="10" Grid.Column="1" Height="18" IsEnabled="False">
+                        <Label Content="White"/>
+                        <Label Content="Green"/>
+                        <Label Content="Blue"/>
+                        <Label Content="Yellow"/>
+                    </ComboBox>
+                    <Label Content="CatchGrades" HorizontalAlignment="Left" Margin="1,62,0,0" VerticalAlignment="Top" FontSize="10" Height="24"/>
+                    <Label Content="IdFilterWhite" HorizontalAlignment="Left" Margin="1,86,0,0" VerticalAlignment="Top" FontSize="10" Height="24" Width="66" RenderTransformOrigin="0.49,0.472"/>
+                    <TextBox Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Left" Height="16" Margin="5,90,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="101" FontSize="10" IsEnabled="False"/>
+                    <Label Content="IdFilterGreen" HorizontalAlignment="Left" Margin="1,107,0,0" VerticalAlignment="Top" FontSize="10" Height="24" Width="66" RenderTransformOrigin="0.49,0.472"/>
+                    <TextBox Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Left" Height="16" Margin="5,111,0,0" TextWrapping="Wrap" Text="44165, 40218, 43801, 43802, 16382" VerticalAlignment="Top" Width="101" FontSize="10" IsEnabled="False" />
+                    <Label Content="IdFilterBlue" HorizontalAlignment="Left" Margin="1,128,0,0" VerticalAlignment="Top" FontSize="10" Height="24" Width="66" RenderTransformOrigin="0.49,0.472"/>
+                    <TextBox Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Left" Height="16" Margin="5,132,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="101" FontSize="10" IsEnabled="False"/>
+                    <Label Content="IdFilterYellow" HorizontalAlignment="Left" Margin="1,149,0,0" VerticalAlignment="Top" FontSize="10" Height="24" Width="71" RenderTransformOrigin="0.49,0.472" Grid.ColumnSpan="2"/>
+                    <TextBox Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Left" Height="16" Margin="5,153,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="101" FontSize="10" IsEnabled="False"/>
+                    <Label Content="FamilyNameWhiteList" HorizontalAlignment="Left" Margin="1,170,0,0" VerticalAlignment="Top" FontSize="10" Height="24" Width="105" RenderTransformOrigin="0.49,0.472" Grid.ColumnSpan="3"/>
+                    <TextBox Grid.Column="3" HorizontalAlignment="Left" Height="16" Margin="5,174,0,0" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" Width="62" FontSize="10" IsEnabled="False" />
+                    <Label Content="AutoRestore" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF01146C" Width="73" FontFamily="Arial Black" FontSize="8" Grid.Column="4" Margin="10,0,0,0"/>
+                    <CheckBox Content="Enabled" Margin="10,24,263,255" FontSize="10" Grid.Column="4" IsEnabled="False"/>
+                    <Label Content="UIHack" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF01146C" Width="73" FontFamily="Arial Black" FontSize="8" Grid.Column="4" Margin="84,0,0,0"/>
+                    <CheckBox Content="Enabled" Margin="84,24,189,255" FontSize="10" Grid.Column="4" IsEnabled="False"/>
+                    <Label Content="AutoItemRegister" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF01146C" Width="89" FontFamily="Arial Black" FontSize="8" Grid.Column="4" Margin="152,0,0,0"/>
+                    <CheckBox Content="Enabled" Margin="152,24,121,255" FontSize="10" Grid.Column="4" IsEnabled="False"/>
+                    <Label Content="AutoItemBuy" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF01146C" Width="89" FontFamily="Arial Black" FontSize="8" Grid.Column="4" Margin="241,0,0,0"/>
+                    <CheckBox Content="Enabled" Margin="241,24,32,255" FontSize="10" Grid.Column="4" IsEnabled="False"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

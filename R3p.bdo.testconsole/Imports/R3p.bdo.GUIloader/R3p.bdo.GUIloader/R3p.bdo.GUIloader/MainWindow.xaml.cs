@@ -417,8 +417,17 @@ namespace R3p.bdo.GUIloader
         private void GetClientVersion()
         {
             ClientVersion = Convert.ToInt32(File.ReadAllLines(Settings.Default.path + @"\version.dat")[0]);
-            
-            int supportedVersion = Convert.ToInt32(FTP_GetFileContent("version.txt"));
+
+            int supportedVersion = 0;
+
+            try
+            {
+                supportedVersion = Convert.ToInt32(FTP_GetFileContent("version.txt"));
+            }
+            catch (Exception err)
+            {
+                LogAppend("Fail at get Supported Version from FTP connection\n ERROR:" + err.Message);
+            }
 
             if (supportedVersion == ClientVersion)
             {
